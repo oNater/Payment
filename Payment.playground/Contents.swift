@@ -10,10 +10,10 @@ func Payment(loanAmount: Int, numberOfPayments: Int, interestRatePerPeriod: Floa
     let discountedFactor = pow(1 + periodInterestRate, Float(numberOfPayments))
     let payment = Float(loanAmount) * periodInterestRate * discountedFactor / (discountedFactor - 1)
 
-    return round(payment * 100) / 100  // Rounding to two decimal places
+    return round(payment * 100) / 100
 }
 
-// Example usage
+// Examples
 let twoMonthPayment = Payment(loanAmount: 20000, numberOfPayments: 2, interestRatePerPeriod: 4.4 / 12)
 print("2-month loan payment: \(twoMonthPayment)")
 
